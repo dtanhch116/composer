@@ -21,7 +21,11 @@ $router->get('/', function () {
 });
 
 $router->get('test', [App\Controllers\ProductController::class, 'index']);
-// $router->get('add-product', [App\Controllers\ProductController::class, 'addProduct']);`
+$router->get('add-product', [App\Controllers\ProductController::class, 'addProduct']);
+$router->post('add-product-post', [App\Controllers\ProductController::class, 'productPost']);
+
+$router->get('edit-product/{id}', [App\Controllers\ProductController::class, 'editProduct']);
+$router->post('edit-product-post/{id}', [App\Controllers\ProductController::class, 'editProductPost']);
 
 // định nghĩa 1 route add-product và trỏ đến hàm trong product controllers
 // khu vực cần quan tâm --end--
